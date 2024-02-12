@@ -29,6 +29,7 @@
   <iframe frameBorder="0" autoplay muted src="https://www.511pa.com/flowplayeri.aspx?CAMID=CAM-09-051&nocache=1707758770401"></iframe>
   <iframe frameBorder="0" autoplay muted src='https://www.511pa.com/flowplayeri.aspx?CAMID=CAM-09-017&nocache=1707758757310'></iframe>
   <iframe frameBorder="0" autoplay muted src="https://www.511pa.com/flowplayeri.aspx?CAMID=CAM-09-040&nocache=1707758704050"></iframe>
+  
   <br>
    <p>Full screen cameras</p>
       <div class="grid-container">
@@ -58,5 +59,44 @@
            <div class="grid-item">  <a target="_blank" href='https://www.511pa.com/flowplayeri.aspx?CAMID=CAM-09-017&nocache=1707758757310'>Plank Rd Main</a>
            <div class="grid-item">  <a target="_blank" href='https://www.511pa.com/flowplayeri.aspx?CAMID=CAM-09-040&nocache=1707758704050'>Mini-Mall</a>
       </div>
+      <script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
+
+        <div class="tomorrow"
+           data-location-id="111248"
+           data-language="EN"
+           data-unit-system="IMPERIAL"
+           data-skin="light"
+           data-widget-type="upcoming"
+           style="padding-bottom:22px;position:relative;"
+        >
+          <a
+            href="https://www.tomorrow.io/weather-api/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by the Tomorrow.io Weather API"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="250"
+              height="18"
+            />
+          </a>
+        </div>
   </center>
 </body>
