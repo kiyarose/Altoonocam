@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
 <body>
   <audio id="bgm" loop autoplay>
-    <source src="https://altoonocam.web.app/music.mp3" type="audio/mpeg">
+    <source src="/music.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
   </audio>
   <center>
+    <audio id="bgm-chrome" loop controls>
+      <source src="/music.mp3" type="audio/mpeg">
+    </audio>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Pennsylvania_Department_of_Transportation_Logo.svg/660px-Pennsylvania_Department_of_Transportation_Logo.svg.png?20230502153838" width=300>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/MUTCD_D12-5.svg/150px-MUTCD_D12-5.svg.png" width=90>
   <iframe autoplay=1 allow='autoplay' frameBorder="0" autoplay muted src="https://www.511pa.com/flowplayeri.aspx?CAMID=CAM-09-009&nocache=1707551355627"></iframe>
@@ -63,6 +66,7 @@
            <div class="grid-item">  <a target="_blank" href='https://www.511pa.com/flowplayeri.aspx?CAMID=CAM-09-040&nocache=1707758704050'>Mini-Mall</a>
       </div>
       <script>
+        // Tomorrow Weather Widget
         (function(d, s, id) {
             if (d.getElementById(id)) {
                 if (window.__TOMORROW__) {
@@ -77,6 +81,34 @@
 
             fjs.parentNode.insertBefore(js, fjs);
         })(document, 'script', 'tomorrow-sdk');
+
+
+//Dumb Chrome Stuffs
+        function isChromium() {
+  // Combine both userAgent and WebKit/Blink feature checks for reliable detection:
+  // 1. Check for presence of "Edg/" for Microsoft Edge, a Chromium fork.
+  const agentContainsEdge = navigator.userAgent.toLowerCase().includes('edg');
+  // 2. Check for presence of the standard userAgent string for Chromium-based browsers:
+  const agentContainsChromium = navigator.userAgent.toLowerCase().includes('chrome') ||
+                                navigator.vendor.toLowerCase().includes('google');
+  // 3. Check for the legacy Chromium version identifier on mobile Chrome (Android):
+  const isAndroidChrome = /^(.*Chrome\/.*)CriOS\/(?=\d{2,})(.*)$/.test(navigator.userAgent);
+  // 4. Check for Blink rendering engine, used by Chromium and some other browsers:
+  const isBlink = !!(window.chrome && chrome.webstore);
+
+  return agentContainsEdge || agentContainsChromium || isAndroidChrome || isBlink;
+}
+
+const elementToShow = document.getElementById('bgm-chrome');
+
+if (isChromium()) {
+  // Show the element using a cross-browser compatible method:
+  elementToShow.style.display = 'block';
+} else {
+  // Optionally, hide the element for non-Chromium browsers:
+  elementToShow.style.display = 'none';
+}
+
         </script>
 
         <div class="tomorrow"
