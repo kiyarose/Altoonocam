@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <body>
-  <audio id="bgm" loop autoplay>
+  <audio autoplay="true" id="bgm" loop autoplay>
     <source src="/music.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
   </audio>
@@ -103,6 +103,7 @@
 }
 
 const elementToShow = document.getElementById('bgm-chrome');
+const elementToHide = document.getElementById('bgm');
 
 if (isChromium()) {
   // Show the element using a cross-browser compatible method:
